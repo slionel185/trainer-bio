@@ -30,4 +30,9 @@ enum TrainingTime {
 
 enum TrainingStyle {
   CROSSFIT
+  STRENGTH
+  ELDERLY
+  RECOMPOSITION
+  MOBILITY
+  BODY_BUILDING
 }
