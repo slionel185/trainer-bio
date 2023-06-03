@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+}
+
+model Trainer {
+  id String @id @default(uuid())
+  club Int @default(08054)
+  name String
+  picture String? @default("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/768px-Windows_10_Default_Profile_Picture.svg.png")
+  trainingTime TrainingTime
+  style TrainingStyle[]
+  highlights String[]
+}
+
+enum TrainingTime {
+  MORNING
+  AFTERNOON
+  BOTH
+}
+
+enum TrainingStyle {
+  CROSSFIT
+}
