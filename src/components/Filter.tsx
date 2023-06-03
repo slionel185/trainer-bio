@@ -19,8 +19,10 @@ const Filter = ({ filterName }: { filterName: string }) => {
     const handleFilterClick = () => {
         if(active) {
             removeFilter(filterName)
+            setActive(false)
         } else {
             addFilter(filterName)
+            setActive(true)
         }
     }
 
