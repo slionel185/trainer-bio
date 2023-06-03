@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface TrainerCardProps {
     trainer: {
         id: string,
@@ -10,7 +12,7 @@ interface TrainerCardProps {
     }
 }
 
-export default ({ trainer }: TrainerCardProps) => {
+const TrainerCard = ({ trainer }: TrainerCardProps) => {
 
     const capatalize = (word: string) => {
         let lower = word.toLowerCase()
@@ -21,7 +23,7 @@ export default ({ trainer }: TrainerCardProps) => {
 
     return (
         <div className='card shadow-xl bg-neutral'>
-            <figure><img src={trainer.picture? trainer.picture : '/Stock.png' } alt="PorfilePicture" /></figure>
+            <figure><Image src={trainer.picture? trainer.picture : '/Stock.png' } alt="PorfilePicture" /></figure>
             <div className="card-body">
                 <div className='flex justify-center items-center w-full'>
                     <h2 className='text-3xl'>{trainer.name}</h2>
@@ -41,3 +43,5 @@ export default ({ trainer }: TrainerCardProps) => {
         </div>
     )
 }
+
+export default TrainerCard

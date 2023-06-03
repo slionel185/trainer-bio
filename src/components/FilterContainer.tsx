@@ -1,6 +1,6 @@
 import Filter from '@/components/Filter'
 
-export default () => {
+const FilterContainer = () => {
     return (
         <div className='flex h-18 py-4 px-6 gap-2'>
             <Filter filterName='MORNING' />
@@ -8,3 +8,5 @@ export default () => {
         </div>
     )
 }
+
+export default FilterContainer

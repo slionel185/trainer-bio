@@ -15,7 +15,7 @@ const trainerObject = {
     ]
 }
 
-export default () => {
+const page = () => {
     return (
         <div className='bg-base-100 flex flex-col h-screen'>
             <div className="navbar bg-primary">
@@ -49,3 +49,5 @@ export default () => {
         </div>
     )
 }
+
+export default page
