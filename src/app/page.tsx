@@ -1,3 +1,5 @@
+import { useQuery } from 'react-query'
+
 import TrainerCard from '@/components/TrainerCard'
 import FilterContainer from '@/components/FilterContainer'
 
@@ -16,6 +18,9 @@ const trainerObject = {
 }
 
 const page = () => {
+
+    
+
     return (
         <div className='bg-base-100 flex flex-col h-screen'>
             <div className="navbar bg-primary">
