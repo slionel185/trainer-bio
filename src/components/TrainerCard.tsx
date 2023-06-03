@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import capatalize from '@/utils/capatalize'
+
 interface TrainerCardProps {
     trainer: {
         id: string,
@@ -13,13 +15,6 @@ interface TrainerCardProps {
 }
 
 const TrainerCard = ({ trainer }: TrainerCardProps) => {
-
-    const capatalize = (word: string) => {
-        let lower = word.toLowerCase()
-        let chars = lower.split('')
-        chars[0].toUpperCase()
-        return chars.join('')
-    }
 
     return (
         <div className='card shadow-xl bg-neutral'>
