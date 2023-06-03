@@ -3,12 +3,25 @@
 import { useState } from 'react'
 
 import capatalize from '@/utils/capatalize'
+import { useFilterStore } from '@/data/filterStore'
 
 const Filter = ({ filterName }: { filterName: string }) => {
-    const [active, setActive] = useState(false)
+
+    const { filters, addFilter, removeFilter } = useFilterStore()
+
+    const isFilterActive = (filter: string) => {
+        if(filters.includes(filter)) return true
+        return false
+    }
+
+    const [active, setActive] = useState(isFilterActive(filterName))
+
+    const handleFilterClick = () => {
+        
+    }
 
     return (
-        <span onClick={() => setActive(active => !active)} className={active? 'badge badge-lg badge-primary cursor-pointer select-none' : 'select-none badge badge-lg cursor-pointer'}>{capatalize(filterName)}</span>
+        <span onClick={handleFilterClick} className={isFilterActive(filterName)? 'badge badge-lg badge-primary cursor-pointer select-none' : 'select-none badge badge-lg cursor-pointer'}>{capatalize(filterName)}</span>
     )
 }
 

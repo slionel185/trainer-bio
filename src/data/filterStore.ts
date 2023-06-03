@@ -7,7 +7,7 @@ interface FilterStore {
 }
 
 export const useFilterStore = create<FilterStore>()((set) => ({
-    filters: [],
+    filters: ["CROSSFIT"],
     addFilter: (filter) => set((state) => ({ filters: [filter, ...state.filters] })),
     removeFilter: (filter) => set((state) => ({ filters: state.filters.filter((value) => value !== filter) }))
 }))
