@@ -17,11 +17,15 @@ const Filter = ({ filterName }: { filterName: string }) => {
     const [active, setActive] = useState(isFilterActive(filterName))
 
     const handleFilterClick = () => {
-        
+        if(active) {
+            removeFilter(filterName)
+        } else {
+            addFilter(filterName)
+        }
     }
 
     return (
-        <span onClick={handleFilterClick} className={isFilterActive(filterName)? 'badge badge-lg badge-primary cursor-pointer select-none' : 'select-none badge badge-lg cursor-pointer'}>{capatalize(filterName)}</span>
+        <span onClick={handleFilterClick} className={active ? 'badge badge-lg badge-primary cursor-pointer select-none' : 'select-none badge badge-lg cursor-pointer'}>{capatalize(filterName)}</span>
     )
 }
 
